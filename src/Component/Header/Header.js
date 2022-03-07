@@ -3,11 +3,11 @@ import { HeaderWrap } from './HeaderStyles'
 
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({title}) {
     return (
         <HeaderWrap>
             <Link to={`/`} style={{textDecoration:"none"}}>
-                <h1>Starwars Filmography</h1>
+                <h1>{title}</h1>
             </Link>
         </HeaderWrap>
     )

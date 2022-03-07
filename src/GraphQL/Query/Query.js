@@ -6,6 +6,7 @@ export const GET_ALL_FILMS = gql`
   query {
     allFilms{
       films{
+        id
         title
         episodeID
         openingCrawl
@@ -18,9 +19,10 @@ export const GET_ALL_FILMS = gql`
 `;
 
 
-export const GET_FILM = id => gql`
-  query {
-    film(filmID: ${id}){
+export const GET_FILM = gql`
+  query GetFilm($id: ID!){
+    film(id: $id){
+      id
       title
       episodeID
       openingCrawl
@@ -29,21 +31,4 @@ export const GET_FILM = id => gql`
       releaseDate
     }
   }
-`;
-
-export const GET_ALL_PLANET = gql`
-  query {
-    allPlanets{
-      planets{
-          name
-        diameter
-        rotationPeriod
-        orbitalPeriod
-        gravity
-        climates
-        terrains
-        } 
-      }
-  }
-`;
-
+`

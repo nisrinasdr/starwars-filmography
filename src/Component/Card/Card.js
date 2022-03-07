@@ -3,7 +3,7 @@ import { CardContent, Content, Info, InfoContainer, Label, StyledText, Title } f
 
 function Card(props) {
   return(
-    <CardContent>
+    <CardContent data-testid={props.data.id}>
       {
         props.isDetail? 
         (<Title>{`${props.data.title}`}</Title>):

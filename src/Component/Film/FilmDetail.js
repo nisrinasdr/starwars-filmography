@@ -5,14 +5,19 @@ import { GET_FILM } from '../../GraphQL/Query/Query';
 import Card from '../Card/Card';
 
 function FilmDetail() {
-  const {filmID} = useParams();
-  const { loading, error, data } = useQuery(GET_FILM(filmID));
+  const { id } = useParams();
+  const { loading, error, data } = useQuery(GET_FILM, {
+    variables: {
+      id
+    }
+  });
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   if (!loading) {
-      let {title, episodeID, openingCrawl, director, producers, releaseDate} = data.film
+      let { id, title, episodeID, openingCrawl, director, producers, releaseDate } = data.film
       return (
-        <Card key={title} data={{title, episodeID, openingCrawl, director, producers, releaseDate}} isDetail={true}/>
+        <Card key={id} data={{ id, title, episodeID, openingCrawl, director, producers, releaseDate }} isDetail={true}/>
       )
   }
 }

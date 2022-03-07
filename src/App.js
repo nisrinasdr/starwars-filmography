@@ -12,10 +12,10 @@ function App() {
   return (
     <Router>
       <div>
-        <Header/>
+        <Header title="Starwars Filmography"/>
         <Routes>
           <Route path='/' element={<Films/>} />
-          <Route path='/:filmID' element={<FilmDetail/>} exact />
+          <Route path='/:id' element={<FilmDetail/>} exact />
         </Routes>
       </div>
     </Router>

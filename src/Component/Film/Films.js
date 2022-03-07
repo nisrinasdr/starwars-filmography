@@ -9,22 +9,23 @@ import { CardWrap } from "../Card/CardStyles";
 
 function Films() {
     const { loading, error, data } = useQuery(GET_ALL_FILMS);
-
+    
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
-    if (!loading) {
+    // if (!loading) {
       return(
       <CardWrap isGrid>
         { data.allFilms.films
-          .map(({ title, episodeID, openingCrawl, director, producers, releaseDate }) => {
+          .map(({ id, title, episodeID, openingCrawl, director, producers, releaseDate }) => {
           return(
-          <Link to={`/${episodeID}`} style={{textDecoration:"none"}}>
-              <Card key={title} data={{title, openingCrawl, releaseDate}} isDetail={false}/>
+          <Link to={`/${id}`} data-testid={`link-${episodeID}`} style={{textDecoration:"none"}}>
+              <Card key={id} data={{title, openingCrawl, releaseDate}} isDetail={false}/>
           </Link>
           )})
         }
       </CardWrap>
-    )}
+    )
+    // }
 }
 
 export default Films;
