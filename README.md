@@ -8,4 +8,4 @@ This is just a documentation of my learning progress. The web shows the data fet
 - Testing using [Jest](https://jestjs.io/docs/tutorial-react) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 # Demo
-[https://starwars-filmography.netlify.app/](Starwars Filmography)
+[Starwars Filmography](https://starwars-filmography.netlify.app/)
